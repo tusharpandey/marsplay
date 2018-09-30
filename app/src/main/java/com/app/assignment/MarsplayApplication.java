@@ -1,7 +1,6 @@
 package com.app.assignment;
 
 import android.app.Application;
-import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.app.assignment.model.di.ApplicationComponent;
@@ -10,12 +9,15 @@ import com.app.assignment.model.di.DaggerApplicationComponent;
 
 public class MarsplayApplication extends Application {
     private ApplicationComponent applicationComponent;
+    private static MarsplayApplication application;
+
 
     @Override
     public void onCreate() {
         super.onCreate();
         initializeInjector();
         getApplicationComponent().inject(this);
+        application = this;
     }
 
     private void initializeInjector() {
@@ -29,7 +31,7 @@ public class MarsplayApplication extends Application {
     }
 
     @NonNull
-    public static MarsplayApplication get(@NonNull Context context) {
-        return (MarsplayApplication) context.getApplicationContext();
+    public static MarsplayApplication get() {
+        return application;
     }
 }

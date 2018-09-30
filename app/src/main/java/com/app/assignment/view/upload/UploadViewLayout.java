@@ -42,7 +42,7 @@ public class UploadViewLayout extends ConstraintLayout implements UploadView {
 
     private void initializeView() {
         inflate(getContext(), R.layout.layout_upload, this);
-        MarsplayApplication.get(getContext()).getApplicationComponent().inject(this);
+        MarsplayApplication.get().getApplicationComponent().inject(this);
         ButterKnife.bind(this);
     }
 
