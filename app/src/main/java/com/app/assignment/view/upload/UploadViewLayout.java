@@ -62,6 +62,10 @@ public class UploadViewLayout extends ConstraintLayout implements UploadView {
     public void onOptionsItemSelected(int resId) {
         switch (resId) {
             case R.id.upload:
+                presenter.uploadImage(cropUri + "");
+                break;
+            case R.id.list:
+                presenter.openList();
                 break;
         }
     }

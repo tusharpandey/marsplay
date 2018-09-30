@@ -11,6 +11,7 @@ import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 
 import com.app.assignment.BuildConfig;
+import com.app.assignment.view.list.AppImageListActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -87,5 +88,11 @@ public class NavigatorImpl implements Navigator {
             }
         }
         return selectedImageUri;
+    }
+
+    @Override
+    public void openList(Activity activity) {
+        Intent intent = new Intent(activity, AppImageListActivity.class);
+        activity.startActivity(intent);
     }
 }

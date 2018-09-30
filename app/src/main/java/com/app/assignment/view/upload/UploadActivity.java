@@ -36,6 +36,9 @@ public class UploadActivity extends AppCompatActivity {
             case R.id.upload:
                 uploadView.onOptionsItemSelected(R.id.upload);
                 return true;
+            case R.id.list:
+                uploadView.onOptionsItemSelected(R.id.list);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
